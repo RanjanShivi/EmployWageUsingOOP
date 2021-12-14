@@ -46,12 +46,17 @@ public class EmployWage {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter Employ wage rate, Working days in a month and Maximum working hours of your Company");
-        int emp_rate = sc.nextInt();
-        int work_day = sc.nextInt();
-        int work_hours = sc.nextInt();
-        int emp_wage = calEmpwage(emp_rate, work_day, work_hours);
-        System.out.println("Total employ wage = " + emp_wage);
+        System.out.println("enter the number of companies");
+        int n= sc.nextInt();
+        for(int i=1; i<=n; i++) {
+            System.out.println("Enter Employ wage rate, Working days in a month and Maximum working hours of your Company-" + i);
+            int emp_rate = sc.nextInt();
+            int work_day = sc.nextInt();
+            int work_hours = sc.nextInt();
+            int emp_wage = calEmpwage(emp_rate, work_day, work_hours);
+            System.out.println("Total employ wage of Company-" + i + " = " + emp_wage);
+            System.out.println(" ");
+        }
 
     }
 }
