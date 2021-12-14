@@ -1,10 +1,8 @@
+import java.util.Scanner;
 
 public class EmployWage {
     public static final int part_time=1;
     public static final int full_time=2;
-    public static final int emp_rate=20;
-    public static final int work_day=20;
-    public static final int max_hrs=100;
 
     public static int attendance() {
         int check = (int) Math.floor(Math.random() * 10) % 3;
@@ -25,7 +23,7 @@ public class EmployWage {
         }
         return emp_hrs;
     }
-    public static int calEmpwage( ) {
+    public static int calEmpwage(int emp_rate, int work_day, int max_hrs) {
         int tot_empwage=0, wagePerDay=0, emp_attendance=0, emp_hoursPerDay=0, tot_emp_hours=0, day=0;
         while(tot_emp_hours < max_hrs && day < work_day) {
             day++;
@@ -47,8 +45,12 @@ public class EmployWage {
     }
 
     public static void main(String[] args) {
-
-        int emp_wage = calEmpwage();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Employ wage rate, Working days in a month and Maximum working hours of your Company");
+        int emp_rate = sc.nextInt();
+        int work_day = sc.nextInt();
+        int work_hours = sc.nextInt();
+        int emp_wage = calEmpwage(emp_rate, work_day, work_hours);
         System.out.println("Total employ wage = " + emp_wage);
 
     }
