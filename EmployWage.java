@@ -12,12 +12,16 @@ public class EmployWage {
 
     public static int calEmpHours( int attend_status) {
         int emp_hrs;
-        if (attend_status == full_time)
-            emp_hrs = 8;
-        else if (attend_status == part_time)
-            emp_hrs = 4;
-        else
-            emp_hrs = 0;
+        switch (attend_status) {
+            case 1:
+                emp_hrs = 4;
+                break;
+            case 2:
+                emp_hrs = 8;
+                break;
+            default:
+                emp_hrs = 0;
+        }
         return emp_hrs;
     }
     public static int calEmpwage( int emp_hours) {
